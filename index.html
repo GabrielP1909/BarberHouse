@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber House - Agendamento Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <nav class="container navbar-content">
+            <div class="logo-container">
+                <a href="index.html" class="logo logo-clickable">
+                    <i class="fas fa-cut logo-icon"></i>
+                    <span>Barber<span class="logo-secondary">House</span></span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links-desktop">
+                <a href="#" class="nav-link">Início</a>
+                
+                <a href="produtos.html" class="nav-link">Produtos</a>
+                
+                <a href="#reservas" class="nav-link">Minhas Reservas</a>
+                <a href="#conta" class="nav-link">Minha Conta</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#" class="mobile-nav-link">Início</a>
+            
+            <a href="produtos.html" class="mobile-nav-link">Produtos</a>
+            
+            <a href="#reservas" class="mobile-nav-link">Minhas Reservas</a>
+            <a href="#conta" class="mobile-nav-link">Minha Conta</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1 class="hero-title">Estilo que Inspira Confiança</h1>
+            <p class="hero-subtitle">Agende seu horário na melhor rede de barbearias da cidade</p>
+            <button id="login-button" class="btn btn-primary">Agendar Agora</button>
+        </div>
+    </section>
+
+    <!-- Units Section -->
+    <section id="unidades" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Nossas Unidades</h2>
+            <!-- Nova frase de incentivo -->
+            <p class="text-center cta-subtitle" style="margin-top: -40px; margin-bottom: 60px;">
+                Escolha a unidade mais próxima de você e agende seu horário sem estresse!
+            </p>
+            
+            <div class="grid-3-cols">
+                <!-- Unit Card 1 -->
+                <div class="card unit-card">
+                    <img src="sapucaiabh.jpg" alt="Barbearia moderna com cadeiras vintage e espelhos grandes" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Barber House Sapucaia do Sul</h3>
+                        <p class="card-text location-text">
+                            <i class="fas fa-map-marker-alt icon-secondary"></i>
+                            Rua Rubem Berta, 439 - Sapucaia
+                        </p>
+                        <p class="card-text distance-text">A apenas 1.2km de distância</p>
+                        <button class="btn btn-primary btn-full-width choose-unit-button">Escolher esta unidade</button>
+                    </div>
+                </div>
+                
+                <!-- Unit Card 2 -->
+                <div class="card unit-card">
+                    <img src="esteiobh.webp" alt="Interior de barbearia com iluminação aconchegante e decoração rústica" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Barber House Esteio</h3>
+                        <p class="card-text location-text">
+                            <i class="fas fa-map-marker-alt icon-secondary"></i>
+                            Rua Dom Pedro, 549 - Esteio
+                        </p>
+                        <p class="card-text distance-text">A apenas 2.5km de distância</p>
+                        <button class="btn btn-primary btn-full-width choose-unit-button">Escolher esta unidade</button>
+                    </div>
+                </div>
+                
+                <!-- Unit Card 3 -->
+                <div class="card unit-card">
+                    <img src="sapucaiacentrobh.webp" alt="Barbearia premium com paredes de tijolo aparente e cadeiras de couro" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Barber House Sapucaia do Sul Centro</h3>
+                        <p class="card-text location-text">
+                            <i class="fas fa-map-marker-alt icon-secondary"></i>
+                            Rua Otaviano Silveira, 230 - Centro
+                        </p>
+                        <p class="card-text distance-text">A apenas 3.1km de distância</p>
+                        <button class="btn btn-primary btn-full-width choose-unit-button">Escolher esta unidade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="section-padding bg-gray">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            
+            <div class="grid-4-cols">
+                <!-- Service Card 1 -->
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="card-title">Corte de Cabelo</h3>
+                    <p class="card-text">Estilo personalizado com técnicas modernas</p>
+                    <p class="service-price">R$ 50,00</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="card-title">Barba</h3>
+                    <p class="card-text">Modelagem completa com tratamento</p>
+                    <p class="service-price">R$ 40,00</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="card-title">Corte + Barba</h3>
+                    <p class="card-text">Pacote completo para melhor custo-benefício</p>
+                    <p class="service-price">R$ 80,00</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="card-title">Navalhado</h3>
+                    <p class="card-text">Técnica tradicional com navalha</p>
+                    <p class="service-price">R$ 60,00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barbers Section -->
+    <section id="barbeiros" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Nossos Barbeiros</h2>
+            
+            <div class="grid-3-cols">
+                <!-- Barber Card 1 -->
+                <div class="card barber-card">
+                    <img src="https://placehold.co/400x400" alt="Barbeiro experiente com estilo clássico e barba bem cuidada" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Carlos Mendes</h3>
+                        <div class="rating">
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star-half-alt star-filled"></i>
+                            <span class="rating-text">4.8 (127)</span>
+                        </div>
+                        <p class="card-text">Especialista em cortes clássicos e modernos com 10 anos de experiência</p>
+                        <button class="btn btn-primary btn-full-width">Agendar</button>
+                    </div>
+                </div>
+                
+                <!-- Barber Card 2 -->
+                <div class="card barber-card">
+                    <img src="https://placehold.co/400x400" alt="Barbeiro jovem com tatuagens e estilo urbano" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Rafael Souza</h3>
+                        <div class="rating">
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <span class="rating-text">5.0 (89)</span>
+                        </div>
+                        <p class="card-text">Mestre em designs de barba e cuidados com a pele</p>
+                        <button class="btn btn-primary btn-full-width">Agendar</button>
+                    </div>
+                </div>
+                
+                <!-- Barber Card 3 -->
+                <div class="card barber-card">
+                    <img src="https://placehold.co/400x400" alt="Barbeiro profissional sorrindo com equipamentos de trabalho" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Diego Almeida</h3>
+                        <div class="rating">
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="fas fa-star star-filled"></i>
+                            <i class="far fa-star star-empty"></i>
+                            <span class="rating-text">4.5 (64)</span>
+                        </div>
+                        <p class="card-text">Especialista em técnicas modernas e tendências internacionais</p>
+                        <button class="btn btn-primary btn-full-width">Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Spoiler) -->
+    <section id="produtos" class="section-padding bg-gray">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            
+            <div class="grid-4-cols">
+                <!-- Product Card 1 -->
+                <div class="card product-card">
+                    <img src="https://placehold.co/400x400" alt="Pomada profissional para cabelo em embalagem premium" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Pomada Barber House Gold</h3>
+                        <p class="card-text product-description">Hold forte com brilho intenso e fixação prolongada</p>
+                        <div class="product-footer">
+                            <p class="product-price">R$ 45,90</p>
+                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="card product-card">
+                    <img src="https://placehold.co/400x400" alt="Óleo para barba com ingredientes naturais e aromático" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Óleo para Barba Premium</h3>
+                        <p class="card-text product-description">Hidratação profunda com aroma de madeira</p>
+                        <div class="product-footer">
+                            <p class="product-price">R$ 59,90</p>
+                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="card product-card">
+                    <img src="https://placehold.co/400x400" alt="Kit completo de cuidados com a barba em estojo de couro" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Kit Completo Barba</h3>
+                        <p class="card-text product-description">Tudo que você precisa para cuidar da sua barba</p>
+                        <div class="product-footer">
+                            <p class="product-price">R$ 129,90</p>
+                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="card product-card">
+                    <img src="https://placehold.co/400x400" alt="Pente profissional de madeira com acabamento fino" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Pente Profissional</h3>
+                        <p class="card-text product-description">Madeira nobre com dentes largos e finos</p>
+                        <div class="product-footer">
+                            <p class="product-price">R$ 35,90</p>
+                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center section-button-container">
+                <a href="produtos.html" class="btn btn-primary">Ver Todos os Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="section-padding bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            
+            <div class="grid-3-cols">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://placehold.co/100x100" alt="Cliente satisfeito sorrindo após corte de cabelo" class="testimonial-avatar">
+                        <div>
+                            <h4 class="testimonial-name">Marcos Silva</h4>
+                            <div class="rating">
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Melhor barbearia da cidade! O Carlos sempre faz um excelente trabalho no meu cabelo e barba. Ambiente limpo e profissional."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://placehold.co/100x100" alt="Homem jovem mostrando sua nova barba bem feita" class="testimonial-avatar">
+                        <div>
+                            <h4 class="testimonial-name">João Oliveira</h4>
+                            <div class="rating">
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star-half-alt star-filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O Rafael transformou minha barba completamente! Produtos de alta qualidade e atendimento impecável. Recomendo!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://placehold.co/100x100" alt="Executivo profissional posando com corte de cabelo moderno" class="testimonial-avatar">
+                        <div>
+                            <h4 class="testimonial-name">Ricardo Santos</h4>
+                            <div class="rating">
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                                <i class="fas fa-star star-filled"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Facilidade no agendamento online, sempre pontuais e profissionais. Diego entende exatamente o que quero e faz um trabalho perfeito."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="cta" class="section-padding bg-secondary text-white">
+        <div class="container text-center">
+            <h2 class="cta-title">Pronto para Transformar seu Visual?</h2>
+            <p class="cta-subtitle">Agende seu horário agora mesmo e experimente o melhor serviço de barbearia da cidade</p>
+            <button id="book-button" class="btn btn-light btn-cta">Agendar Agora</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">
+                    <i class="fas fa-cut footer-logo-icon"></i>
+                    Barber<span class="footer-logo-secondary">House</span>
+                </h3>
+                <p>Redes de barbearias premium oferecendo serviços exclusivos e produtos de alta qualidade.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-heading">Navegação</h4>
+                <ul class="footer-list">
+                    <li><a href="#" class="footer-link">Início</a></li>
+                    <li><a href="produtos.html" class="footer-link">Produtos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-heading">Contato</h4>
+                <ul class="footer-list">
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span>Rua Rubem Berta, 439 - Sapucaia do Sul</span>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span>(51) 9748-9829</span>
+                    </li>
+                    
+                    <li class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>contato@barberhouse.com</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4 class="footer-heading">Horário de Funcionamento</h4>
+                <ul class="footer-list">
+                    <li>Segunda a Sexta: 09:00 - 19:00</li>
+                    <li>Sábado: 09:00 - 17:00</li>
+                    <li>Domingo: Fechado</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barber House. Estilo não se improvisa — é nossa assinatura. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modals (Login, Register, Booking, Product, Cart) -->
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal login-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login</h3>
+                <button id="close-login-modal" class="modal-close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="login-form" class="modal-form">
+                <div class="form-group">
+                    <label for="login-email" class="form-label">E-mail</label>
+                    <input type="email" id="login-email" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-password" class="form-label">Senha</label>
+                    <input type="password" id="login-password" class="form-input">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full-width form-submit-button">Entrar</button>
+                
+                <div class="form-footer">
+                    <p class="form-text">Não tem uma conta? <button id="show-register" class="link-button">Cadastre-se</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="register-modal" class="modal register-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Cadastro</h3>
+                <button id="close-register-modal" class="modal-close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="register-form" class="modal-form">
+                <div class="form-group">
+                    <label for="register-name" class="form-label">Nome Completo</label>
+                    <input type="text" id="register-name" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-email" class="form-label">E-mail</label>
+                    <input type="email" id="register-email" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-phone" class="form-label">Telefone com WhatsApp</label>
+                    <input type="tel" id="register-phone" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-password" class="form-label">Senha</label>
+                    <input type="password" id="register-password" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-confirm-password" class="form-label">Confirme sua Senha</label>
+                    <input type="password" id="register-confirm-password" class="form-input">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full-width form-submit-button">Cadastrar</button>
+                
+                <div class="form-footer">
+                    <p class="form-text">Já tem uma conta? <button id="show-login" class="link-button">Faça Login</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal booking-modal hidden">
+        <div class="modal-content modal-content-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Agendamento</h3>
+                <button id="close-booking-modal" class="modal-close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-grid-2-cols">
+                <div>
+                    <h4 class="modal-subtitle">Selecione o Serviço</h4>
+                    <div class="service-selection-list">
+                        <div class="service-item">
+                            <div class="service-item-details">
+                                <span class="service-name">Corte de Cabelo</span>
+                                <span class="service-price">R$ 50,00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-item-details">
+                                <span class="service-name">Barba</span>
+                                <span class="service-price">R$ 40,00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-item-details">
+                                <span class="service-name">Corte + Barba</span>
+                                <span class="service-price">R$ 80,00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-item-details">
+                                <span class="service-name">Navalhado</span>
+                                <span class="service-price">R$ 60,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="modal-subtitle barber-selection-title">Selecione o Barbeiro</h4>
+                    <div class="barber-selection-list">
+                        <div class="barber-item">
+                            <img src="https://placehold.co/60x60" alt="Barbeiro profissional com muito estilo" class="barber-avatar">
+                            <span class="barber-name">Carlos Mendes</span>
+                        </div>
+                        
+                        <div class="barber-item">
+                            <img src="https://placehold.co/60x60" alt="Barbeiro experiente com barba bem cuidada" class="barber-avatar">
+                            <span class="barber-name">Rafael Souza</span>
+                        </div>
+                        
+                        <div class="barber-item">
+                            <img src="https://placehold.co/60x60" alt="Barbeiro especialista em cortes modernos" class="barber-avatar">
+                            <span class="barber-name">Diego Almeida</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="modal-subtitle">Selecione a Data e Horário</h4>
+                    <div class="form-group">
+                        <label class="form-label">Data</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Horário Disponível</label>
+                        <div class="time-slots-grid">
+                            <button class="time-slot-button">09:00</button>
+                            <button class="time-slot-button">10:00</button>
+                            <button class="time-slot-button">11:00</button>
+                            <button class="time-slot-button">14:00</button>
+                            <button class="time-slot-button">15:00</button>
+                            <button class="time-slot-button">16:00</button>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-summary">
+                        <h4 class="modal-subtitle">Resumo do Agendamento</h4>
+                        <div class="summary-details">
+                            <div class="summary-item">
+                                <span class="summary-label">Serviço:</span>
+                                <span class="summary-value service-summary">Corte + Barba</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Barbeiro:</span>
+                                <span class="summary-value barber-summary">Carlos Mendes</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Data:</span>
+                                <span class="summary-value date-summary">15/11/2023</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Horário:</span>
+                                <span class="summary-value time-summary">14:00</span>
+                            </div>
+                            <div class="summary-total">
+                                <span class="summary-label">Total:</span>
+                                <span class="summary-value total-price">R$ 80,00</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-full-width">Confirmar Agendamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal product-modal hidden">
+        <div class="modal-content modal-content-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Detalhes do Produto</h3>
+                <button id="close-product-modal" class="modal-close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-grid-2-cols">
+                <div class="product-image-gallery">
+                    <img src="https://placehold.co/500x500" alt="Kit premium para cuidados com a barba em estojo de couro genuíno" class="product-main-image">
+                    <div class="product-thumbnails">
+                        <img src="https://placehold.co/100x100" alt="Kit barba ângulo frontal" class="thumbnail-image">
+                        <img src="https://placehold.co/100x100" alt="Kit barba aberto" class="thumbnail-image">
+                        <img src="https://placehold.co/100x100" alt="Produtos do kit isolados" class="thumbnail-image">
+                    </div>
+                </div>
+                
+                <div class="product-details">
+                    <h3 class="product-details-title">Kit Completo Barba</h3>
+                    <div class="rating product-details-rating">
+                        <i class="fas fa-star star-filled"></i>
+                        <i class="fas fa-star star-filled"></i>
+                        <i class="fas fa-star star-filled"></i>
+                        <i class="fas fa-star star-filled"></i>
+                        <i class="fas fa-star-half-alt star-filled"></i>
+                        <span class="rating-text">(42 avaliações)</span>
+                    </div>
+                    
+                    <p class="product-details-price">R$ 129,90</p>
+                    
+                    <p class="product-details-description">Kit completo com tudo que você precisa para cuidar da sua barba:</p>
+                    
+                    <ul class="product-features-list">
+                        <li>Óleo para barba com aroma de madeira nobre (60ml)</li>
+                        <li>Pomada modeladora forte fixação (100g)</li>
+                        <li>Pente de madeira nobre com dentes largos e finos</li>
+                        <li>Tesoura profissional em aço inox</li>
+                        <li>Estojo de couro genuíno</li>
+                    </ul>
+                    
+                    <div class="quantity-selector">
+                        <button class="quantity-button">-</button>
+                        <span class="quantity-display">1</span>
+                        <button class="quantity-button">+</button>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-full-width product-add-to-cart">Adicionar ao Carrinho</button>
+                    <button class="btn btn-outline-secondary btn-full-width product-buy-now">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal cart-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title cart-title">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    Carrinho
+                </h3>
+                <button id="close-cart-modal" class="modal-close-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items-list">
+                <!-- Cart Item 1 -->
+                <div class="cart-item">
+                    <div class="cart-item-details">
+                        <img src="https://placehold.co/80x80" alt="Pomada profissional em embalagem dourada" class="cart-item-image">
+                        <div>
+                            <h4 class="cart-item-name">Pomada Barber House Gold</h4>
+                            <p class="cart-item-price">R$ 45,90</p>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Cart Item 2 -->
+                <div class="cart-item">
+                    <div class="cart-item-details">
+                        <img src="https://placehold.co/80x80" alt="Óleo para barba em frasco âmbar" class="cart-item-image">
+                        <div>
+                            <h4 class="cart-item-name">Óleo para Barba Premium</h4>
+                            <p class="cart-item-price">R$ 59,90</p>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Subtotal:</span>
+                    <span class="summary-value">R$ 105,80</span>
+                </div>
+                <div class="summary-item summary-total-line">
+                    <span class="summary-label">Total:</span>
+                    <span class="summary-value total-price">R$ 105,80</span>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-full-width cart-checkout-button">Finalizar Compra</button>
+            <button class="btn btn-outline-secondary btn-full-width cart-continue-shopping">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
