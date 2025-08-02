@@ -224,10 +224,10 @@ img {
 .mobile-menu-button {
     background: none;
     border: none;
-    color: var(--white-text);
     font-size: 1.5rem;
     cursor: pointer;
     display: none; /* Hidden on desktop */
+    color: var(--white-text); /* Cor do ícone do menu mobile */
 }
 
 .mobile-menu {
@@ -276,28 +276,27 @@ img {
 }
 
 /* Grid Layouts */
+/* REMOVIDA A CLASSE grid-4-cols AQUI, pois será aplicada de forma mais específica */
 .grid-3-cols {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.grid-4-cols {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
 
-/* Cards */
+/* Cards (Genéricos) */
 .card {
     background-color: var(--dark-card-bg); /* Fundo escuro para cards */
     color: var(--text-color-dark); /* Texto claro para cards */
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais escura */
-    overflow: hidden;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra padrão */
+    transition: all 0.3s ease; /* Mantém a transição para o hover */
+    
+    display: flex; 
+    flex-direction: column; 
 }
 
+/* Efeito de hover padrão para cards (sem o brilho animado) */
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais escura no hover */
@@ -311,21 +310,63 @@ img {
 
 .card-content {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card-title {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: var(--text-color-light); /* Títulos mais claros nos cards */
+    color: var(--text-color-light);
 }
 
 .card-text {
-    color: var(--gray-text-dark); /* Texto cinza mais escuro nos cards */
+    color: var(--gray-text-dark);
     margin-bottom: 15px;
+    min-height: 45px;
 }
 
-/* Unit Cards */
+/* Unit Cards - Sem brilho animado */
+.unit-card {
+    /* Revertido para o estilo padrão do .card */
+    background-color: var(--dark-card-bg);
+    color: var(--text-color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remover qualquer estilo de pseudo-elemento específico para unit-card */
+.unit-card::before {
+    content: none; /* Garante que o pseudo-elemento não seja renderizado */
+}
+
+/* Remover keyframes se não forem usados em outro lugar */
+/* @keyframes rotateGlow { ... } */
+
+
+.unit-card .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* Remover border-radius específico se não for mais necessário */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.unit-card .card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
 .unit-card .location-text {
     display: flex;
     align-items: center;
@@ -339,6 +380,7 @@ img {
 
 .unit-card .distance-text {
     margin-bottom: 20px;
+    min-height: 20px;
 }
 
 /* Service Cards */
@@ -388,20 +430,49 @@ img {
 }
 
 /* Product Cards */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+    border-radius: 12px; /* Aprimoramento: Cantos mais arredondados */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Aprimoramento: Sombra mais pronunciada */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Aprimoramento: Sombra mais intensa no hover */
+}
+
 .product-card .card-image {
     height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 12px; /* Aprimoramento: Arredonda apenas os cantos superiores da imagem */
+    border-top-right-radius: 12px; /* Aprimoramento: Arredonda apenas os cantos superiores da imagem */
+}
+
+.product-card .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-description {
     margin-bottom: 15px;
-    min-height: 45px; 
+    height: 60px; /* Aprimoramento: Aumenta a altura para mais texto */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Aprimoramento: Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+    white-space: normal;
 }
 
 .product-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: auto;
 }
 
 .product-price {
@@ -413,6 +484,7 @@ img {
 .btn-add-to-cart {
     padding: 6px 12px;
     font-size: 0.9rem;
+    border-radius: 8px; /* Aprimoramento: Arredondamento sutil no botão "Add" */
 }
 
 .section-button-container {
@@ -557,6 +629,10 @@ img {
 .contact-icon {
     margin-right: 10px;
     color: var(--secondary-color);
+}
+
+.footer-list {
+    padding-left: 0; /* Garante que não haja padding padrão de lista */
 }
 
 .footer-bottom {
@@ -1043,6 +1119,71 @@ img {
     }
 }
 
+/* Remover keyframes rotateGlow se não for usado em outro lugar */
+/* @keyframes rotateGlow { ... } */
+
+
+/* --- Novos Estilos para Categorias de Produtos --- */
+.product-categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+}
+
+.category-button {
+    background-color: var(--dark-item-bg);
+    color: var(--text-color-dark);
+    border: 1px solid var(--border-color-dark);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.category-button:hover {
+    background-color: #4a4a4a;
+    color: var(--white-text);
+}
+
+.category-button.active {
+    background-color: var(--secondary-color);
+    color: var(--white-text);
+    border-color: var(--secondary-color);
+}
+
+.category-button.active:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.product-category-section {
+    margin-bottom: 60px; /* Espaçamento entre as seções de categoria */
+}
+
+.product-category-section:last-child {
+    margin-bottom: 0; /* Remove margem da última seção */
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+}
+
+/* NOVO ESTILO: Contêiner para os cards de produto dentro de cada categoria */
+.product-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Força 4 colunas de largura igual */
+    gap: 25px; /* Mantém o espaçamento entre os cards */
+}
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar-content {
@@ -1070,9 +1211,13 @@ img {
         margin-bottom: 40px;
     }
 
-    .grid-3-cols,
-    .grid-4-cols {
+    .grid-3-cols { /* Mantido para outras seções que usam 3 colunas */
         grid-template-columns: 1fr; 
+    }
+    
+    /* Ajuste para o novo contêiner de produtos em telas menores */
+    .product-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
     }
 
     .card-content {
@@ -1121,6 +1266,32 @@ img {
     .product-thumbnails {
         flex-wrap: wrap;
     }
+
+    /* Responsividade para categorias */
+    .product-categories {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .category-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Aprimoramento: Ajuste do arredondamento para telas menores */
+    .product-card {
+        border-radius: 8px; 
+    }
+
+    .product-card .card-image {
+        border-top-left-radius: 8px; 
+        border-top-right-radius: 8px; 
+    }
 }
 
 @media (max-width: 480px) {
@@ -1143,5 +1314,10 @@ img {
 
     .time-slots-grid {
         grid-template-columns: repeat(2, 1fr); 
+    }
+
+    /* Ajuste para o novo contêiner de produtos em telas muito pequenas */
+    .product-cards-container {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
     }
 }

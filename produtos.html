@@ -12,7 +12,8 @@
     <header class="navbar">
         <nav class="container navbar-content">
             <div class="logo-container">
-                <a href="index.html" class="logo logo-clickable"> <!-- Adicionado a classe logo-clickable -->
+                <!-- MODIFICAÇÃO AQUI: href apontando para index.html#unidades -->
+                <a href="index.html#unidades" class="logo logo-clickable">
                     <i class="fas fa-cut logo-icon"></i>
                     <span>Barber<span class="logo-secondary">House</span></span>
                 </a>
@@ -20,12 +21,18 @@
             
             <!-- Desktop Navigation -->
             <div class="nav-links-desktop">
-                <a href="index.html" class="nav-link">Início</a>
+                <!-- MODIFICAÇÃO AQUI: href apontando para index.html#unidades -->
+                <a href="index.html#unidades" class="nav-link">Início</a>
+                
+                <!-- REMOVIDO: Botão "Unidades" do cabeçalho desktop -->
                 
                 <a href="produtos.html" class="nav-link active">Produtos</a> <!-- Link ativo para esta página -->
                 
                 <a href="index.html#reservas" class="nav-link">Minhas Reservas</a>
                 <a href="index.html#conta" class="nav-link">Minha Conta</a>
+                
+                <!-- Botão de Logout (Opcional, para testes) - Adicionado 'hidden' por padrão -->
+                <a href="#" id="logout-button" class="nav-link hidden">Sair</a>
             </div>
             
             <!-- Mobile Menu Button -->
@@ -36,12 +43,18 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-menu hidden">
-            <a href="index.html" class="mobile-nav-link">Início</a>
+            <!-- MODIFICAÇÃO AQUI: href apontando para index.html#unidades -->
+            <a href="index.html#unidades" class="mobile-nav-link">Início</a>
+            
+            <!-- REMOVIDO: Botão "Unidades" do cabeçalho mobile -->
             
             <a href="produtos.html" class="mobile-nav-link active">Produtos</a>
             
             <a href="index.html#reservas" class="mobile-nav-link">Minhas Reservas</a>
             <a href="index.html#conta" class="mobile-nav-link">Minha Conta</a>
+            
+            <!-- Botão de Logout Mobile (Opcional, para testes) - Adicionado 'hidden' por padrão -->
+            <a href="#" id="logout-button-mobile" class="mobile-nav-link hidden">Sair</a>
         </div>
     </header>
 
@@ -50,104 +63,136 @@
         <div class="container">
             <h2 class="section-title">Todos os Nossos Produtos</h2>
             
-            <div class="grid-4-cols">
-                <!-- Product Card 1 -->
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Pomada profissional para cabelo em embalagem premium" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Pomada Barber House Gold</h3>
-                        <p class="card-text product-description">Hold forte com brilho intenso e fixação prolongada</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 45,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product Card 2 -->
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Óleo para barba com ingredientes naturais e aromático" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Óleo para Barba Premium</h3>
-                        <p class="card-text product-description">Hidratação profunda com aroma de madeira</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 59,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product Card 3 -->
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Kit completo de cuidados com a barba em estojo de couro" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Kit Completo Barba</h3>
-                        <p class="card-text product-description">Tudo que você precisa para cuidar da sua barba</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 129,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product Card 4 -->
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Pente profissional de madeira com acabamento fino" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Pente Profissional</h3>
-                        <p class="card-text product-description">Madeira nobre com dentes largos e finos</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 35,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+            <!-- Product Categories Navigation -->
+            <nav class="product-categories">
+                <button class="category-button active" data-category="all">Todos</button>
+                <button class="category-button" data-category="cabelo">Cabelo</button>
+                <button class="category-button" data-category="barba">Barba</button>
+                <button class="category-button" data-category="acessorios">Acessórios</button>
+            </nav>
+
+            <div class="product-list-container">
+                <!-- Categoria: Cabelo -->
+                <div class="product-category-section" id="category-cabelo">
+                    <h3 class="category-title">Produtos para Cabelo</h3>
+                    <!-- REMOVIDA A CLASSE grid-4-cols AQUI -->
+                    <div class="product-cards-container"> 
+                        <!-- Product Card 1 (Pomada) -->
+                        <div class="card product-card" data-category="cabelo">
+                            <img src="https://placehold.co/400x400" alt="Pomada profissional para cabelo em embalagem premium" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Pomada Barber House Gold</h3>
+                                <p class="card-text product-description">Hold forte com brilho intenso e fixação prolongada</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 45,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Adicione mais produtos aqui para a página completa -->
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Shampoo para barba e cabelo" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Shampoo 2 em 1</h3>
-                        <p class="card-text product-description">Limpeza profunda e hidratação para cabelo e barba</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 39,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                <!-- Categoria: Barba -->
+                <div class="product-category-section" id="category-barba">
+                    <h3 class="category-title">Produtos para Barba</h3>
+                    <!-- REMOVIDA A CLASSE grid-4-cols AQUI -->
+                    <div class="product-cards-container">
+                        <!-- Product Card 2 (Óleo para Barba) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Óleo para barba com ingredientes naturais e aromático" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Óleo para Barba Premium</h3>
+                                <p class="card-text product-description">Hidratação profunda com aroma de madeira</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 59,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Card 3 (Kit Completo Barba) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Kit completo de cuidados com a barba em estojo de couro" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Kit Completo Barba</h3>
+                                <p class="card-text product-description">Tudo que você precisa para cuidar da sua barba</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 129,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card (Shampoo 2 em 1) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Shampoo para barba e cabelo" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Shampoo 2 em 1</h3>
+                                <p class="card-text product-description">Limpeza profunda e hidratação para cabelo e barba</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 39,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card (Bálsamo Pós-Barba) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Bálsamo pós-barba calmante" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Bálsamo Pós-Barba</h3>
+                                <p class="card-text product-description">Alivia irritações e hidrata a pele após o barbear</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 30,00</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card (Cera para Bigode) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Cera modeladora para bigode" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Cera para Bigode</h3>
+                                <p class="card-text product-description">Fixação forte para modelar e estilizar o bigode</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 25,00</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card (Escova para Barba) -->
+                        <div class="card product-card" data-category="barba">
+                            <img src="https://placehold.co/400x400" alt="Escova para barba de cerdas naturais" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Escova para Barba</h3>
+                                <p class="card-text product-description">Cerdas naturais para desembaraçar e distribuir óleos</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 49,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Bálsamo pós-barba calmante" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Bálsamo Pós-Barba</h3>
-                        <p class="card-text product-description">Alivia irritações e hidrata a pele após o barbear</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 30,00</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Cera modeladora para bigode" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Cera para Bigode</h3>
-                        <p class="card-text product-description">Fixação forte para modelar e estilizar o bigode</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 25,00</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card product-card">
-                    <img src="https://placehold.co/400x400" alt="Escova para barba de cerdas naturais" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Escova para Barba</h3>
-                        <p class="card-text product-description">Cerdas naturais para desembaraçar e distribuir óleos</p>
-                        <div class="product-footer">
-                            <p class="product-price">R$ 49,90</p>
-                            <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                <!-- Categoria: Acessórios -->
+                <div class="product-category-section" id="category-acessorios">
+                    <h3 class="category-title">Acessórios</h3>
+                    <!-- REMOVIDA A CLASSE grid-4-cols AQUI -->
+                    <div class="product-cards-container">
+                        <!-- Product Card 4 (Pente Profissional) -->
+                        <div class="card product-card" data-category="acessorios">
+                            <img src="https://placehold.co/400x400" alt="Pente profissional de madeira com acabamento fino" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">Pente Profissional</h3>
+                                <p class="card-text product-description">Madeira nobre com dentes largos e finos</p>
+                                <div class="product-footer">
+                                    <p class="product-price">R$ 35,90</p>
+                                    <button class="btn btn-secondary btn-add-to-cart">Add</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -356,7 +401,7 @@
             
             <div class="modal-grid-2-cols">
                 <div class="product-image-gallery">
-                    <img src="https://placehold.co/500x500" alt="Kit premium para cuidados com a barba em estojo de couro genuíno" class="product-main-image">
+                    <img src="https://placehold.co/500x500" alt="Kit premium para cuidados com a barba em estojo de couro genuíno" class="card-image">
                     <div class="product-thumbnails">
                         <img src="https://placehold.co/100x100" alt="Kit barba ângulo frontal" class="thumbnail-image">
                         <img src="https://placehold.co/100x100" alt="Kit barba aberto" class="thumbnail-image">

@@ -12,7 +12,8 @@
     <header class="navbar">
         <nav class="container navbar-content">
             <div class="logo-container">
-                <a href="index.html" class="logo logo-clickable">
+                <!-- MODIFICAÇÃO AQUI: href apontando para #unidades -->
+                <a href="#unidades" class="logo logo-clickable">
                     <i class="fas fa-cut logo-icon"></i>
                     <span>Barber<span class="logo-secondary">House</span></span>
                 </a>
@@ -20,12 +21,18 @@
             
             <!-- Desktop Navigation -->
             <div class="nav-links-desktop">
-                <a href="#" class="nav-link">Início</a>
+                <!-- MODIFICAÇÃO AQUI: href apontando para #unidades -->
+                <a href="#unidades" class="nav-link">Início</a>
+                
+                <!-- REMOVIDO: Botão "Unidades" do cabeçalho desktop -->
                 
                 <a href="produtos.html" class="nav-link">Produtos</a>
                 
                 <a href="#reservas" class="nav-link">Minhas Reservas</a>
                 <a href="#conta" class="nav-link">Minha Conta</a>
+                
+                <!-- Botão de Logout (Opcional, para testes) - Adicionado 'hidden' por padrão -->
+                <a href="#" id="logout-button" class="nav-link hidden">Sair</a>
             </div>
             
             <!-- Mobile Menu Button -->
@@ -36,12 +43,18 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="mobile-menu hidden">
-            <a href="#" class="mobile-nav-link">Início</a>
+            <!-- MODIFICAÇÃO AQUI: href apontando para #unidades -->
+            <a href="#unidades" class="mobile-nav-link">Início</a>
+            
+            <!-- REMOVIDO: Botão "Unidades" do cabeçalho mobile -->
             
             <a href="produtos.html" class="mobile-nav-link">Produtos</a>
             
             <a href="#reservas" class="mobile-nav-link">Minhas Reservas</a>
             <a href="#conta" class="mobile-nav-link">Minha Conta</a>
+            
+            <!-- Botão de Logout Mobile (Opcional, para testes) - Adicionado 'hidden' por padrão -->
+            <a href="#" id="logout-button-mobile" class="mobile-nav-link hidden">Sair</a>
         </div>
     </header>
 
@@ -50,6 +63,7 @@
         <div class="container hero-content">
             <h1 class="hero-title">Estilo que Inspira Confiança</h1>
             <p class="hero-subtitle">Agende seu horário na melhor rede de barbearias da cidade</p>
+            <!-- O botão "Agendar Agora" na Hero Section também será controlado pelo JS -->
             <button id="login-button" class="btn btn-primary">Agendar Agora</button>
         </div>
     </section>
@@ -617,7 +631,7 @@
             
             <div class="modal-grid-2-cols">
                 <div class="product-image-gallery">
-                    <img src="https://placehold.co/500x500" alt="Kit premium para cuidados com a barba em estojo de couro genuíno" class="product-main-image">
+                    <img src="https://placehold.co/500x500" alt="Kit premium para cuidados com a barba em estojo de couro genuíno" class="card-image">
                     <div class="product-thumbnails">
                         <img src="https://placehold.co/100x100" alt="Kit barba ângulo frontal" class="thumbnail-image">
                         <img src="https://placehold.co/100x100" alt="Kit barba aberto" class="thumbnail-image">
